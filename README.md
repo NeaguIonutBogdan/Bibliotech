@@ -1,8 +1,6 @@
 REST-auth
 =========
 
-Companion application to my [RESTful Authentication with Flask](http://blog.miguelgrinberg.com/post/restful-authentication-with-flask) article.
-
 Installation
 ------------
 
@@ -65,9 +63,9 @@ API Documentation
 Example
 -------
 
-The following `curl` command registers a new user with username `miguel` and password `python`:
+The following `curl` command registers a new user with username `BOGDAN` and password `python`:
 
-    $ curl -i -X POST -H "Content-Type: application/json" -d '{"username":"miguel","password":"python"}' http://127.0.0.1:5000/api/users
+    $ curl -i -X POST -H "Content-Type: application/json" -d '{"username":"BOGDAN","password":"python"}' http://127.0.0.1:5000/api/users
     HTTP/1.0 201 CREATED
     Content-Type: application/json
     Content-Length: 27
@@ -76,7 +74,7 @@ The following `curl` command registers a new user with username `miguel` and pas
     Date: Thu, 28 Nov 2013 19:56:39 GMT
     
     {
-      "username": "miguel"
+      "username": "BOGDAN"
     }
 
 These credentials can now be used to access protected resources:
@@ -89,7 +87,7 @@ These credentials can now be used to access protected resources:
     Date: Thu, 28 Nov 2013 20:02:25 GMT
     
     {
-      "data": "Hello, miguel!"
+      "data": "Hello, BOGDAN!"
     }
 
 Using the wrong credentials the request is refused:
@@ -128,7 +126,7 @@ And now during the token validity period there is no need to send username and p
     Date: Thu, 28 Nov 2013 20:05:08 GMT
     
     {
-      "data": "Hello, miguel!"
+      "data": "Hello, BOGDAN!"
     }
 
 Once the token expires it cannot be used anymore and the client needs to request a new one. Note that in this last example the password is arbitrarily set to `x`, since the password isn't used for token authentication.
