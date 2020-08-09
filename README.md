@@ -2,7 +2,7 @@
 API Documentation
 -----------------
 
-- POST **/api/users**
+- POST **/register**
 
     Register a new user.<br>
     The body must contain a JSON object that defines `username` and `password` fields.<br>
@@ -12,13 +12,13 @@ API Documentation
     - The password is hashed before it is stored in the database. Once hashed, the original password is discarded.
     - In a production deployment secure HTTP must be used to protect the password in transit.
 
-- GET **/api/users/&lt;int:id&gt;**
+- GET **/api/users/<int:id>**
 
     Return a user.<br>
     On success a status code 200 is returned. The body of the response contains a JSON object with the requested user.<br>
     On failure status code 400 (bad request) is returned.
 
-- GET **/api/token**
+- GET **/login**
 
     Return an authentication token.<br>
     This request must be authenticated using a HTTP Basic Authentication header.<br>
